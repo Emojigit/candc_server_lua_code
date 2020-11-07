@@ -36,12 +36,16 @@ if event.type == "digiline" then
     digiline_send("pu/time",param or "")
     mem.halt = true
     mem.hr = "time"
-   elseif cmd == "grapic" then
-    digiline_send("pu/grapic",param or "")
+   elseif cmd == "graphic" then
+    digiline_send("pu/graphic",param or "")
     mem.halt = true
-    mem.hr = "grapic"
+    mem.hr = "graphic"
    elseif cmd == "heat" then
     digiline_send(out,"Current heat: "..tostring(heat).." and the max is "..tostring(heat_max))
+   elseif cmd == "halt" then
+    mem.halt = true
+    mem.hr = "user request"
+    digiline_send(out,"Halted")
    elseif cmd == "clear" then
     digiline_send(out,"\n\n\n\n\n\n")
    end
@@ -50,7 +54,7 @@ if event.type == "digiline" then
   digiline_send(out,event.msg)
   mem.halt = false
   mem.hr = ""
- elseif event.channel == "pu_feedback/grapic" and mem.hr == "grapic" then
+ elseif event.channel == "pu_feedback/graphic" and mem.hr == "graphic" then
   if type(event.msg) == "string" then digiline_send(out,event.msg) end
   digiline_send("matrix",event.msg or {})
   mem.halt = false
