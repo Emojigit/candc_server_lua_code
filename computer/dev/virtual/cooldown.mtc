@@ -1,0 +1,3 @@
+/lua mesecon.do_cooldown({x=3048,y=19,z=2966})
+/lua mesecon.do_cooldown({x=3052,y=19,z=2965})
+/lua mesecon.do_cooldown({x=3052,y=19,z=2961})
