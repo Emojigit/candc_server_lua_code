@@ -1,11 +1,11 @@
-local recv = "pu/grapic"
+local recv = "pu/graphic"
 if event.channel == recv then
  if heat > (heat_max - 5) then
-  digiline_send("pu_feedback/grapic","Grapic Machine Too hot! (Current heat: "..tostring(heat).." and the max is "..tostring(heat_max)..")")
+  digiline_send("pu_feedback/graphic","Grapic Machine Too hot! (Current heat: "..tostring(heat).." and the max is "..tostring(heat_max)..")")
   return
  end
  if event.msg == "full" then
-  digiline_send("pu_feedback/grapic",{
+  digiline_send("pu_feedback/graphic",{
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -24,7 +24,7 @@ if event.channel == recv then
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
   })
  elseif event.msg == "smile" then
-  digiline_send("pu_feedback/grapic",{
+  digiline_send("pu_feedback/graphic",{
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -43,7 +43,7 @@ if event.channel == recv then
    {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
   })
  elseif event.msg == "clear" then
-  digiline_send("pu_feedback/grapic",{
+  digiline_send("pu_feedback/graphic",{
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -62,8 +62,8 @@ if event.channel == recv then
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
   })
  elseif event.msg == "heat" then
-  digiline_send("pu_feedback/grapic","Current heat: "..tostring(heat).." and the max is "..tostring(heat_max))
+  digiline_send("pu_feedback/graphic","Current heat: "..tostring(heat).." and the max is "..tostring(heat_max))
  else
-  digiline_send("pu_feedback/grapic","Unknown Grapic Image")
+  digiline_send("pu_feedback/graphic","Unknown Grapic Image")
  end
 end
