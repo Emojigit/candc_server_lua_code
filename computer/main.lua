@@ -48,6 +48,8 @@ if event.type == "digiline" then
     digiline_send(out,"Halted")
    elseif cmd == "clear" then
     digiline_send(out,"\n\n\n\n\n\n")
+   else
+    digiline_send(out,"Unknown Command: "..cmd)
    end
   end
  elseif event.channel == "pu_feedback/time" and mem.hr == "time" then
